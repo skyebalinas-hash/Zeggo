@@ -13,19 +13,24 @@ function displayProperties(propertyArray) {
 
         card.className = "property-card";
 
-        card.innerHTML = `
-            <img src="${property.image}" alt="${property.title}">
+      card.innerHTML = `
+    <img src="${property.image}" alt="${property.title}">
 
-            <h3>${property.title}</h3>
+    <h3>${property.title}</h3>
 
-            <p>${property.city}</p>
+    <p>${property.city}</p>
 
-            <p>${property.price}</p>
+    <p>${property.price}</p>
 
-            <p>${property.bedrooms} Bedrooms | ${property.bathrooms} Bathrooms</p>
+    <p>${property.bedrooms} Bedrooms | ${property.bathrooms} Bathrooms</p>
 
-            <p>${property.type}</p>
-        `;
+    <p>${property.type}</p>
+
+    <a href="property.html?id=${property.id}">
+        <button class="view-button">View Property</button>
+    </a>
+`;
+
 
         propertyList.appendChild(card);
 

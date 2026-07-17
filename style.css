@@ -26,7 +26,6 @@ header h1 {
     color: #1e6fd9;
 }
 
-
 nav a {
     text-decoration: none;
     color: #333;
@@ -42,18 +41,18 @@ nav a:hover {
 /* Hero */
 
 .hero {
-    text-align: center;
-    padding: 80px 20px;
     background: white;
+    text-align: center;
+    padding: 70px 20px;
 }
 
 .hero h2 {
-    font-size: 40px;
+    font-size: 38px;
     margin-bottom: 15px;
 }
 
 .hero p {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 
@@ -65,32 +64,25 @@ nav a:hover {
     gap: 10px;
 }
 
-
 .search-box input {
     width: 350px;
-    padding: 15px;
+    padding: 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 16px;
 }
 
-
 .search-box button {
-    padding: 15px 25px;
-    border: none;
+    padding: 14px 25px;
     background: #1e6fd9;
     color: white;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
 }
 
 
-.search-box button:hover {
-    background: #1554a5;
-}
-
-
-/* Properties */
+/* Listings */
 
 .featured {
     padding: 40px;
@@ -98,8 +90,81 @@ nav a:hover {
 }
 
 
-#propertyList {
-    margin-top: 20px;
+#propertyList,
+#favoriteList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+
+/* Property Cards */
+
+.property-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+
+/* IMPORTANT: Controls image size */
+
+.property-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.property-card h3 {
+    margin: 15px;
+    font-size: 22px;
+}
+
+
+.property-card p {
+    margin: 10px 15px;
+    color: #555;
+}
+
+
+/* Buttons */
+
+.view-button,
+.favorite-button {
+    margin: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.view-button {
+    background: #1e6fd9;
+    color: white;
+    border: none;
+}
+
+
+.favorite-button {
+    background: white;
+    color: #1e6fd9;
+    border: 1px solid #1e6fd9;
+}
+
+
+/* Property Details Image */
+
+#propertyDetails img {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 
@@ -111,62 +176,3 @@ footer {
     text-align: center;
     background: white;
 }
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Properties - Skye Real Estate</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <h1>Skye Real Estate</h1>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="properties.html">Properties</a>
-        <a href="favorites.html">Favorites</a>
-    </nav>
-</header>
-
-
-<section class="featured">
-
-    <h2>All Properties</h2>
-
-    <div id="propertyList"></div>
-
-</section>
-
-
-<footer>
-    <p>© 2026 Skye Real Estate</p>
-</footer>
-
-
-<script src="data.js"></script>
-<script src="script.js"></script>
-
-</body>
-
-</html>
-
-.view-button {
-    margin: 15px;
-    padding: 10px 20px;
-    background: #1e6fd9;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.view-button:hover {
-    background: #1554a5;
-}
-Sent

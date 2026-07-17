@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Properties | SkyeHomes</title>
+    <title>Property Details | SkyeHomes</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,8 +15,6 @@
 
 <body>
 
-<!-- NAVBAR -->
-
 <nav class="navbar">
 
     <div class="logo">
@@ -26,133 +23,23 @@
 
     <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="properties.html">Buy</a></li>
-        <li><a href="properties.html">Rent</a></li>
-        <li><a href="#">Sell</a></li>
-        <li><a href="#">Agents</a></li>
+        <li><a href="properties.html">Properties</a></li>
     </ul>
-
-    <div class="nav-right">
-        <button class="login-btn">Sign In</button>
-    </div>
 
 </nav>
 
-<!-- PAGE HEADER -->
+<section class="property-page">
 
-<section class="page-banner">
+    <div id="propertyDetails">
 
-    <h1>Browse Properties</h1>
-
-    <p>
-        Search homes, condos, apartments, and lots throughout the Philippines.
-    </p>
-
-</section>
-
-<!-- SEARCH FILTERS -->
-
-<section class="filters">
-
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by city or province">
-
-    <select id="statusFilter">
-
-        <option value="">Status</option>
-
-        <option>For Sale</option>
-
-        <option>For Rent</option>
-
-    </select>
-
-    <select id="priceFilter">
-
-        <option value="">Any Price</option>
-
-        <option value="1000000">₱1M+</option>
-
-        <option value="3000000">₱3M+</option>
-
-        <option value="5000000">₱5M+</option>
-
-        <option value="10000000">₱10M+</option>
-
-    </select>
-
-    <select id="bedFilter">
-
-        <option value="">Beds</option>
-
-        <option value="1">1+</option>
-
-        <option value="2">2+</option>
-
-        <option value="3">3+</option>
-
-        <option value="4">4+</option>
-
-        <option value="5">5+</option>
-
-    </select>
-
-    <select id="typeFilter">
-
-        <option value="">Property Type</option>
-
-        <option>House & Lot</option>
-
-        <option>Condo</option>
-
-        <option>Apartment</option>
-
-        <option>Townhouse</option>
-
-        <option>Lot Only</option>
-
-    </select>
-
-    <button id="searchProperties">
-
-        Search
-
-    </button>
-
-</section>
-
-<!-- RESULTS -->
-
-<section class="properties-section">
-
-    <h2>Available Listings</h2>
-
-    <div
-        id="propertyGrid"
-        class="property-grid">
+        <!-- Property details will appear here -->
 
     </div>
 
 </section>
 
-<!-- FOOTER -->
-
-<footer>
-
-    <h2>SkyeHomes</h2>
-
-    <p>Helping Filipinos find their dream home.</p>
-
-    <p>© 2026 SkyeHomes. All Rights Reserved.</p>
-
-</footer>
-
 <script src="data.js"></script>
-
 <script src="script.js"></script>
 
 </body>
-
 </html>

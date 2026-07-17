@@ -13,55 +13,69 @@ function displayProperties(propertyArray) {
 
         card.className = "property-card";
 
-      card.innerHTML = `
-    <img src="${property.image}" alt="${property.title}">
+        card.innerHTML = `
+            <img src="${property.image}" alt="${property.title}">
 
-    <h3>${property.title}</h3>
+            <h3>${property.title}</h3>
 
-    <p>${property.city}</p>
+            <p>${property.city}</p>
 
-    <p>${property.price}</p>
+            <p>${property.price}</p>
 
-    <p>${property.bedrooms} Bedrooms | ${property.bathrooms} Bathrooms</p>
+            <p>${property.bedrooms} Bedrooms | ${property.bathrooms} Bathrooms</p>
 
-    <p>${property.type}</p>
+            <p>${property.type}</p>
 
-    <a href="property.html?id=${property.id}">
-        <button class="view-button">View Property</button>
-    </a>
-`;
+            <button class="favorite-button" onclick="addFavorite(${property.id})">
+                ♡ Save
+            </button>
 
+            <a href="property.html?id=${property.id}">
+                <button class="view-button">
+                    View Property
+                </button>
+            </a>
+        `;
 
         propertyList.appendChild(card);
 
     });
+
 }
 
 
+// Show all properties when page loads
 displayProperties(properties);
 
 
+// Search system
+if (searchButton) {
 
-searchButton.addEventListener("click", function() {
+    searchButton.addEventListener("click", function() {
 
-    const searchText = searchInput.value.toLowerCase();
-
-
-    const filteredProperties = properties.filter(property =>
-
-        property.city.toLowerCase().includes(searchText) ||
-        property.title.toLowerCase().includes(searchText)
-
-    );
+        const searchText = searchInput.value.toLowerCase();
 
 
-    displayProperties(filteredProperties);
+        const filteredProperties = properties.filter(property =>
 
-});
+            property.city.toLowerCase().includes(searchText) ||
+            property.title.toLowerCase().includes(searchText)
 
+        );
+
+
+        displayProperties(filteredProperties);
+
+    });
+
+}
+
+
+// Save favorite property
 function addFavorite(id) {
 
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
 
     if (!favorites.includes(id)) {
 

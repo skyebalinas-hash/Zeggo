@@ -1,7 +1,8 @@
 const propertyList = document.getElementById("propertyList");
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
-
+const typeFilter = document.getElementById("typeFilter");
+const bedroomFilter = document.getElementById("bedroomFilter");
 
 function displayProperties(propertyArray) {
 
@@ -55,13 +56,32 @@ if (searchButton) {
 
         const searchText = searchInput.value.toLowerCase();
 
+        const selectedType = typeFilter.value;
 
-        const filteredProperties = properties.filter(property =>
+        const selectedBedrooms = bedroomFilter.value;
 
-            property.city.toLowerCase().includes(searchText) ||
-            property.title.toLowerCase().includes(searchText)
 
-        );
+        const filteredProperties = properties.filter(property => {
+
+
+            const matchesSearch =
+                property.city.toLowerCase().includes(searchText) ||
+                property.title.toLowerCase().includes(searchText);
+
+
+            const matchesType =
+                selectedType === "" ||
+                property.type === selectedType;
+
+
+            const matchesBedrooms =
+                selectedBedrooms === "" ||
+                property.bedrooms >= Number(selectedBedrooms);
+
+
+            return matchesSearch && matchesType && matchesBedrooms;
+
+        });
 
 
         displayProperties(filteredProperties);
@@ -69,6 +89,7 @@ if (searchButton) {
     });
 
 }
+
 
 
 // Save favorite property

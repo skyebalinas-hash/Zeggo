@@ -58,3 +58,23 @@ searchButton.addEventListener("click", function() {
     displayProperties(filteredProperties);
 
 });
+
+function addFavorite(id) {
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (!favorites.includes(id)) {
+
+        favorites.push(id);
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+
+        alert("Property saved!");
+
+    } else {
+
+        alert("Property already saved!");
+
+    }
+
+}

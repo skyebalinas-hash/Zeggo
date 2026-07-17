@@ -263,3 +263,65 @@ function viewProperty(id){
     window.location.href = "property.html";
 
 }
+
+// ===============================
+// PROPERTY DETAILS PAGE
+// ===============================
+
+const propertyDetails = document.getElementById("propertyDetails");
+
+if (propertyDetails) {
+
+    const selectedId = Number(localStorage.getItem("selectedProperty"));
+
+    const property = properties.find(p => p.id === selectedId);
+
+    if (property) {
+
+        propertyDetails.innerHTML = `
+
+        <div class="property-detail">
+
+            <img src="${property.image}" alt="${property.title}">
+
+            <div>
+
+                <h1>${property.title}</h1>
+
+                <div class="price">
+                    ₱${property.price.toLocaleString()}
+                </div>
+
+                <p><strong>📍 Location:</strong> ${property.city}, ${property.province}</p>
+
+                <p><strong>Status:</strong> ${property.status}</p>
+
+                <p><strong>Type:</strong> ${property.type}</p>
+
+                <p><strong>🛏 Bedrooms:</strong> ${property.bedrooms}</p>
+
+                <p><strong>🛁 Bathrooms:</strong> ${property.bathrooms}</p>
+
+                <p><strong>🚗 Garage:</strong> ${property.garage}</p>
+
+                <p>${property.description}</p>
+
+                <button class="contact-btn">
+                    Contact Agent
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    } else {
+
+        propertyDetails.innerHTML = `
+            <h2>Property not found.</h2>
+        `;
+
+    }
+
+}

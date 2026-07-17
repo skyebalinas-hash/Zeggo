@@ -13,19 +13,45 @@ if (property) {
 
     details.innerHTML = `
 
-        <img src="${property.image}" style="width:100%; max-width:700px; border-radius:12px;">
+        <div class="property-detail-card">
 
-        <h2>${property.title}</h2>
+            <img class="detail-image" src="${property.image}" alt="${property.title}">
 
-        <h3>${property.price}</h3>
 
-        <p>${property.city}</p>
+            <h2>${property.title}</h2>
 
-        <p>${property.bedrooms} Bedrooms</p>
 
-        <p>${property.bathrooms} Bathrooms</p>
+            <h3 class="detail-price">${property.price}</h3>
 
-        <p>Type: ${property.type}</p>
+
+            <p class="detail-location">
+                📍 ${property.city}
+            </p>
+
+
+            <div class="detail-info">
+
+                <p>
+                    🛏 ${property.bedrooms} Bedrooms
+                </p>
+
+                <p>
+                    🚿 ${property.bathrooms} Bathrooms
+                </p>
+
+                <p>
+                    🏠 ${property.type}
+                </p>
+
+            </div>
+
+
+            <button class="favorite-button" onclick="addFavorite(${property.id})">
+                ♡ Save Property
+            </button>
+
+
+        </div>
 
     `;
 
@@ -33,5 +59,28 @@ if (property) {
 else {
 
     details.innerHTML = "<h2>Property not found</h2>";
+
+}
+
+
+
+function addFavorite(id) {
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+    if (!favorites.includes(id)) {
+
+        favorites.push(id);
+
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+
+        alert("Property saved!");
+
+    } else {
+
+        alert("Property already saved!");
+
+    }
 
 }

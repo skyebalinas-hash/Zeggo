@@ -31,19 +31,27 @@ if (property) {
 
             <div class="detail-info">
 
-                <p>
-                    🛏 ${property.bedrooms} Bedrooms
-                </p>
+                <p>🛏 ${property.bedrooms} Bedrooms</p>
 
-                <p>
-                    🚿 ${property.bathrooms} Bathrooms
-                </p>
+                <p>🚿 ${property.bathrooms} Bathrooms</p>
 
-                <p>
-                    🏠 ${property.type}
-                </p>
+                <p>🏠 ${property.type}</p>
 
             </div>
+
+
+            <h3>Description</h3>
+
+            <p>
+                ${property.description}
+            </p>
+
+
+            <h3>Amenities</h3>
+
+            <ul>
+                ${property.amenities.map(item => <li>${item}</li>).join("")}
+            </ul>
 
 
             <button class="favorite-button" onclick="addFavorite(${property.id})">

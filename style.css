@@ -111,3 +111,47 @@ footer {
     text-align: center;
     background: white;
 }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Skye Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Skye Real Estate</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="favorites.html">Favorites</a>
+    </nav>
+</header>
+
+
+<section class="featured">
+
+    <h2>All Properties</h2>
+
+    <div id="propertyList"></div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 Skye Real Estate</p>
+</footer>
+
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

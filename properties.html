@@ -2,198 +2,42 @@
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Browse Properties | Zeggo</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Skye Real Estate</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<header>
+    <h1>Skye Real Estate</h1>
 
-<nav class="navbar">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="favorites.html">Favorites</a>
+    </nav>
+</header>
 
-<div class="logo">
-🏠 Zeggo
-</div>
 
-<ul class="nav-menu">
+<section class="featured">
 
-<li><a href="index.html">Home</a></li>
+    <h2>All Properties</h2>
 
-<li><a href="properties.html" class="active">Buy</a></li>
-
-<li><a href="properties.html">Rent</a></li>
-
-<li><a href="favorites.html">Favorites</a></li>
-
-</ul>
-
-<div class="nav-right">
-
-<button class="login-btn">
-
-Sign In
-
-</button>
-
-</div>
-
-</nav>
-
-<!-- ================= PAGE HEADER ================= -->
-
-<section class="page-hero">
-
-<h1>
-
-Browse Properties
-
-</h1>
-
-<p>
-
-Find your perfect home anywhere in the Philippines.
-
-</p>
+    <div id="propertyList"></div>
 
 </section>
 
-<!-- ================= SEARCH BAR ================= -->
 
-<section class="property-search">
+<footer>
+    <p>© 2026 Skye Real Estate</p>
+</footer>
 
-<div class="search-box">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search by city, province or property name">
+<script src="data.js"></script>
+<script src="script.js"></script>
 
-<select id="status">
+</body>
 
-<option value="">Status</option>
-
-<option value="For Sale">For Sale</option>
-
-<option value="For Rent">For Rent</option>
-
-</select>
-
-<select id="price">
-
-<option value="">Any Price</option>
-
-<option value="1000000">₱1M+</option>
-
-<option value="3000000">₱3M+</option>
-
-<option value="5000000">₱5M+</option>
-
-<option value="10000000">₱10M+</option>
-
-</select>
-
-<select id="beds">
-
-<option value="">Bedrooms</option>
-
-<option value="1">1+</option>
-
-<option value="2">2+</option>
-
-<option value="3">3+</option>
-
-<option value="4">4+</option>
-
-<option value="5">5+</option>
-
-</select>
-
-<select id="type">
-
-<option value="">Property Type</option>
-
-<option value="House">House & Lot</option>
-
-<option value="Condo">Condominium</option>
-
-<option value="Apartment">Apartment</option>
-
-<option value="Lot">Lot Only</option>
-
-</select>
-
-<button id="searchProperties">
-
-Search
-
-</button>
-
-</div>
-
-</section>
-
-    <!-- ================= RESULTS ================= -->
-
-<section class="properties-section">
-
-    <div class="properties-header">
-
-        <h2 id="propertyCount">
-            Available Properties
-        </h2>
-
-        <select id="sortProperties">
-
-            <option value="default">Sort By</option>
-
-            <option value="priceLow">
-                Price: Low to High
-            </option>
-
-            <option value="priceHigh">
-                Price: High to Low
-            </option>
-
-            <option value="beds">
-                Most Bedrooms
-            </option>
-
-            <option value="newest">
-                Newest Listings
-            </option>
-
-        </select>
-
-    </div>
-
-    <div
-        id="propertyGrid"
-        class="property-grid">
-
-        <!-- Properties loaded by JavaScript -->
-
-    </div>
-
-</section>
-
-<!-- ================= CALL TO ACTION ================= -->
-
-<section class="cta">
-
-    <h2>
-
-        Can't find your dream
+</html>
